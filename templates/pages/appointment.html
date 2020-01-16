@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/appointment.css' %}">
+    <title>Appointment</title>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="/pages/appointment.html">Appointment</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="/pages/index.html">Home</a></li>
+    </ul>
+    <div class="banner">
+        <table>
+            <tr>
+                <td><img src="static/pages/images/logo.png" alt="" class="logo"></td>
+                <td>
+                    <p>Appointment</p>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="icon_table">
+        <table class="icons">
+            <tr>
+                <td><img src="static/pages/images/gender.svg" class="icon" alt=""></td>
+                <td><img src="static/pages/images/scissors.svg" class="icon"></td>
+                <td><img src="static/pages/images/person-24px.svg" class="icon"> </td>
+                <td><img src="static/pages/images/date_range-24px.svg" class="icon"> </td>
+                <td><img src="static/pages/images/check_box-24px.svg" class="icon"> </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1 class="title">Voor wie?</h1>
+        <table class="icon_gender">
+            <tr>
+                <td><img src="static/pages/images/Man.jpg" class="gender" onclick="man()" alt=""></td>
+                <td><img src="static/pages/images/vrouw.jpg" class="gender" alt=""></td>
+                <td><img src="static/pages/images/kids.jpg" class="gender" alt=""></td>
+            </tr>
+        </table>
+    </div>
+    <script src="static/pages/js/script.js"></script>
+</body>
+
+
+</html>

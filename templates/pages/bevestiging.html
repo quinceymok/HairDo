@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/bevestiging.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+        <li><a class="active" href="/pages/appointment.html">Appointment</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="/pages/index.html">Home</a></li>
+    </ul>
+    <div class="banner">
+        <table>
+            <tr>
+                <td>
+                    <p>Appointment</p>
+                </td>
+            </tr>
+        </table>
+
+
+<form action=" " method="post">
+    {% csrf_token %}
+    {{form}}
+        <input type="submit">
+
+</form>
+
