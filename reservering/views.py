@@ -14,11 +14,35 @@ def appointment(request):
 def bevestiging(request):
     form = CustomerForm(request.POST or None)
     if form.is_valid():
-        first_name = form.cleaned_data['first_name']
-        last_name = form.cleaned_data['last_name']
-        phone_number = form.cleaned_data['phone_number']
-        email = form.cleaned_data['email']
-        c = Customer(first_name=first_name, last_name=last_name, phone_number=phone_number, email=email)
+        firstname = form.cleaned_data['firstname']
+        lastname = form.cleaned_data['lastname']
+        phone = form.cleaned_data['phone']
+        e_mail = form.cleaned_data['e_mail']
+        c = Customer(firstname=firstname, lastname=lastname, phone=phone, e_mail=e_mail)
         c.save()
     context = {'form': form}
     return render(request, 'pages/bevestiging.html', context)
+
+def showcustomer(request):
+    allCustomer = Customer.objects.all()
+    context = {'allCustomer': allCustomer}
+
+    return render(request, 'pages/klantgegevens.html', context)
+
+
+from django.views import generic
+
+#class Customerlistview(generic.ListView):
+   # model = Customer
+
+
+#def customer_list_view(request):
+    #obj = Customer.objects.get()
+    #context = {
+        #'firstname': obj.firstname,
+        #'lastname': obj.lastname,
+        #'phone': obj.phone,
+        #'e_mail': obj.e_mail,
+
+
+    #return render(request, "pages/klantgegevens.html", context)
