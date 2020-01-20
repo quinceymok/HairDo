@@ -31,18 +31,3 @@ def showcustomer(request):
 
 
 from django.views import generic
-
-#class Customerlistview(generic.ListView):
-   # model = Customer
-
-
-#def customer_list_view(request):
-    #obj = Customer.objects.get()
-    #context = {
-        #'firstname': obj.firstname,
-        #'lastname': obj.lastname,
-        #'phone': obj.phone,
-        #'e_mail': obj.e_mail,
-
-
-    #return render(request, "pages/klantgegevens.html", context)

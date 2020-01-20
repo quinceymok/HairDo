@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
-<title>HairDo Design</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
+    <title>HairDo Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/style.css' %}">
 
 </head>
 <body>
-    <ul>
-        <li><a href="appointment">Appointment</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a class="active" href="#home">Home</a></li>
-    </ul>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand"><span>Hair</span>Do<span>De</span>Sign</a>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#home">Home</a></li>
+        </ul>
+        <button class="navbar-toggler">
+       <span></span>
+     </button>
+    </nav>
+
+    <header class="intro"></header>
+    <section id="about" class="container">
+        <h2><i class="fab fa-html5">page 1</i></h2>
+
+    </section>
+    <section id="appointment" class="container">
+        <h2><i class="fab fa-css3-alt">page 2</i></h2>
+    </section>
+    <section id="home" class="container">
+        <h2><i class="fab fa-js">page 3</i></h2>
+    </section>
 
     <img src="/pages/images/homePage.jpg" alt="" class="image">
+
+<div class="footer">
+    <p>&copy; hairdodesign.nl | designed by Quincey Mok</p>
+</div>
 </body>
 </html>

@@ -3,12 +3,42 @@ body {
     background-color: #cccccc;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: transparent;
+
+a {
+  display: inline-block;
+  width: 50px;
+  text-decoration: none;
+}
+
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    color: #000000;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.image {
+    width: 100.65%;
+    object-fit: cover;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: -10px;
 }
 
 li {
@@ -81,3 +111,5 @@ p {
     text-align: center;
     color: rgb(88, 86, 86);
 }
+
+
