@@ -18,6 +18,7 @@ class Availability(models.Model):
         unique_together = (('date_id', 'stylist_id'),)
 
 
+
 class ChosenTreatment(models.Model):
     appointment_id = models.ForeignKey('Appointment', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
     treatment_options_id = models.ForeignKey('TreatmentOptions', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
@@ -47,6 +48,9 @@ class Stylist(models.Model):
     class Meta:
         db_table = 'Stylist'
 
+    def __str__(self):
+        return self.firstname
+
 
 class TimeSlot(models.Model):
     date_id = models.AutoField(db_column='Date_ID', primary_key=True)  # Field name made lowercase.
@@ -55,6 +59,9 @@ class TimeSlot(models.Model):
     class Meta:
         db_table = 'Time_slot'
 
+    def __str__(self):
+        return str(self.date)
+
 
 class Treatment(models.Model):
     treatment_id = models.AutoField(db_column='Treatment_ID', primary_key=True)  # Field name made lowercase.
@@ -62,6 +69,9 @@ class Treatment(models.Model):
 
     class Meta:
         db_table = 'Treatment'
+
+    def __str__(self):
+        return self.name
 
 
 class TreatmentOptions(models.Model):
@@ -82,4 +92,3 @@ class Appointment(models.Model):
 
     class Meta:
         db_table = 'Appointment'
-

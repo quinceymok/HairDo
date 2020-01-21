@@ -1,56 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <title>HairDo Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'pages/appointment.css' %}">
-    <title>Appointment</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/appointment.css' %}">
+
 </head>
-
 <body>
+    <nav class="navbar">
+        <a href="#" class="navbar-brand"><span>Hair</span>Do<span>De</span>Sign</a>
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/appointment">Price</a></li>
+            <li><a href="/">Home</a></li>
+        </ul>
+        <button class="navbar-toggler">
+       <span></span>
+     </button>
+    </nav>
 
+    <header class="intro"></header>
+    <section id="page-1" class="container">
+        <h2><i class="page_1"><a href="#page-2">Voor Wie</a></i></h2>
 
-    <div class="banner">
-        <table>
-            <tr>
-                <td><img src="static/pages/images/logo.png" alt="" class="logo"></td>
-                <td>
-                    <p>Appointment</p>
-                </td>
-            </tr>
-        </table>
+    </section>
+    <section id="page-2" class="container">
+        <h2><i class="page_2"><a href="#page-3">Behandelingen</a></i></h2>
+    </section>
+    <section id="page-3" class="container">
+        <h2><i class="page_3"><a href="#page-4">Datum/Tijd</a></i></h2>
+    </section>
+    <section id="page-4" class="container">
+        <h2><i class="page_4">Bevestiging</i></h2>
+    </section>
 
+    <img src="/pages/images/homePage.jpg" alt="" class="image">
 
-    </div>
-
-    <div class="icon_table">
-        <table class="icons">
-            <tr>
-                <td><img src="static/pages/images/gender.svg" class="icon" alt=""></td>
-                <td><img src="static/pages/images/scissors.svg" class="icon"></td>
-                <td><img src="static/pages/images/person-24px.svg" class="icon"> </td>
-                <td><img src="static/pages/images/date_range-24px.svg" class="icon"> </td>
-                <td><img src="static/pages/images/check_box-24px.svg" class="icon"> </td>
-            </tr>
-        </table>
-    </div>
-
-    <div>
-        <h1 class="title">Voor wie?</h1>
-        <table class="icon_gender">
-            <tr>
-                <td><img src="static/pages/images/Man.jpg" class="gender" onclick="man()" alt=""></td>
-                <td><img src="static/pages/images/vrouw.jpg" class="gender" alt=""></td>
-                <td><img src="static/pages/images/kids.jpg" class="gender" alt=""></td>
-            </tr>
-        </table>
-    </div>
-
-
-
-    <script src="static/pages/js/script.js"></script>
+<div class="footer">
+    <p>&copy; hairdodesign.nl | designed by Quincey Mok</p>
+</div>
 </body>
-
-
 </html>
+
+<script src="static/pages/js/appointment.js"></script>
