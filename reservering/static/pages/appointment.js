@@ -16,3 +16,15 @@ function navbarLinkClick() {
         navbarToggler.click();
     }
 }
+
+const genderChoises = document.querySelectorAll("#gender-choices .choice");
+console.log(genderChoises);
+
+for (let i = 0; i < genderChoises.length; i++) {
+    const singleChoice = genderChoises[i];
+    singleChoice.onclick = function(event) {
+        const finalGenderChoise = event.target.id;
+        window.localStorage.setItem("genderChoice", finalGenderChoise);
+    };
+    console.log(singleChoice);
+}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import CustomerForm
-from .models import Customer
+from .models import Customer, Stylist
 
 
 def index(request):
@@ -8,7 +8,10 @@ def index(request):
 
 
 def appointment(request):
-    return render(request, 'pages/appointment.html')
+    allStylist = Stylist.objects.all()
+    context = {'allStylist': allStylist}
+
+    return render(request, 'pages/appointment.html', context)
 
 
 def bevestiging(request):

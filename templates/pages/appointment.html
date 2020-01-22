@@ -22,17 +22,45 @@
 
     <header class="intro"></header>
     <section id="page-1" class="container">
-        <h2><i class="page_1"><a href="#page-2">Voor Wie</a></i></h2>
+        <p><i class="page_1"><a href="#page-2">Voor Wie</a></i></p>
+
+        <div id="gender-choices">
+            <div class="choice" id="man">
+                Man<
+            </div>
+            <div class="choice" id="vrouw">
+                Vrouw
+            </div>
+            <div class="choice" id="anders">
+                Anders
+            </div>
+        </div>
 
     </section>
     <section id="page-2" class="container">
         <h2><i class="page_2"><a href="#page-3">Behandelingen</a></i></h2>
     </section>
+
     <section id="page-3" class="container">
-        <h2><i class="page_3"><a href="#page-4">Datum/Tijd</a></i></h2>
+        <h1 class="title center">
+            <a href="#page-4">Stylist</a>
+        </h1>
+
+        <div class="card-container stylisten">
+            {% for Stylist in allStylist %}
+                <div class="card stylist" id="{{ Stylist.firstname }}">
+                    {{ Stylist.firstname }}
+                </div>
+            {% endfor %}
+        </div>
     </section>
+
+
     <section id="page-4" class="container">
-        <h2><i class="page_4">Bevestiging</i></h2>
+        <h2><i class="page_4"><a href="#page-5">Datum/Tijd</a></i></h2>
+    </section>
+    <section id="page-5" class="container">
+        <h2><i class="page_5">Bevestiging</i></h2>
     </section>
 
     <img src="/pages/images/homePage.jpg" alt="" class="image">
@@ -43,4 +71,4 @@
 </body>
 </html>
 
-<script src="static/pages/js/appointment.js"></script>
+<script src="{% static 'pages/appointment.js' %}"></script>
