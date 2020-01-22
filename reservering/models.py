@@ -18,7 +18,6 @@ class Availability(models.Model):
         unique_together = (('date_id', 'stylist_id'),)
 
 
-
 class ChosenTreatment(models.Model):
     appointment_id = models.ForeignKey('Appointment', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
     treatment_options_id = models.ForeignKey('TreatmentOptions', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
