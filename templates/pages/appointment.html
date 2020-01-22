@@ -21,24 +21,41 @@
     </nav>
 
     <header class="intro"></header>
+
+
     <section id="page-1" class="container">
-        <p><i class="page_1"><a href="#page-2">Voor Wie</a></i></p>
+                <h1 class="title center">
+            <a href="#page-2">Voor wie</a>
+        </h1>
 
-        <div id="gender-choices">
-            <div class="choice" id="man">
-                Man<
-            </div>
-            <div class="choice" id="vrouw">
-                Vrouw
-            </div>
-            <div class="choice" id="anders">
-                Anders
-            </div>
+        <div class="card-container gender-choices">
+                <div class="card choice" id="man">
+                    Man
+                </div>
+                <div class="card choice" id="vrouw">
+                    Vrouw
+                </div>
+            <div class="card choice" id="kids">
+                    Kids
+                </div>
+            <div class="card choice" id="anders">
+                    Anders
+                </div>
         </div>
-
     </section>
+
     <section id="page-2" class="container">
-        <h2><i class="page_2"><a href="#page-3">Behandelingen</a></i></h2>
+        <h1 class="title center">
+            <a href="#page-3">Behandelingen</a>
+        </h1>
+
+        <div class="card-container behandelingen">
+            {% for Treatment in allTreatment %}
+                <div class="card treatment" id="{{ Treatment.name }}">
+                    {{ Treatment.name }}
+                </div>
+            {% endfor %}
+        </div>
     </section>
 
     <section id="page-3" class="container">
@@ -59,6 +76,7 @@
     <section id="page-4" class="container">
         <h2><i class="page_4"><a href="#page-5">Datum/Tijd</a></i></h2>
     </section>
+
     <section id="page-5" class="container">
         <h2><i class="page_5">Bevestiging</i></h2>
     </section>

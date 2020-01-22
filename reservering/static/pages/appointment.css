@@ -200,6 +200,21 @@ h1.title.center {
         /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
     }
 }
+.card-container.genderchoice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    color: grey;
+    height: 330px;
+    flex: 1;
+    margin: 24px;
+}
 
 .card-container {
     display: flex;

@@ -15,3 +15,4 @@ router.register('appointment', views.AppointmentView)
 urlpatterns = [
     path('', include(router.urls))
 ]
+

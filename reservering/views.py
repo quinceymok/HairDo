@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import CustomerForm
-from .models import Customer, Stylist
+from .models import Customer, Stylist, Treatment
 
 
 def index(request):
@@ -9,7 +9,8 @@ def index(request):
 
 def appointment(request):
     allStylist = Stylist.objects.all()
-    context = {'allStylist': allStylist}
+    allTreatment = Treatment.objects.all()
+    context = {'allStylist': allStylist, 'allTreatment': allTreatment}
 
     return render(request, 'pages/appointment.html', context)
 
