@@ -9,7 +9,6 @@ router.register('treatment', views.TreatmentView)
 router.register('timeslot', views.TimeSlotView)
 router.register('treatmentoptions', views.TreatmentOptionsView)
 router.register('chosentreatment', views.ChosenTreatmentView)
-router.register('availability', views.AvailabilityView)
 router.register('appointment', views.AppointmentView)
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import CustomerForm
+from .forms import CustomerForm, DateForm
 from .models import Customer, Stylist, Treatment, TreatmentOptions
 
 from django.db.models import prefetch_related_objects
@@ -12,12 +12,15 @@ def index(request):
 def appointment(request):
     allStylist = Stylist.objects.all()
     allTreatment = Treatment.objects.all()
-    allTreatmentOptions =  TreatmentOptions.objects.all()
+    allTreatmentOptions = TreatmentOptions.objects.all()
+
+    form = DateForm(request.POST or None)
+
     context = {'allStylist': allStylist,
                'allTreatment': allTreatment,
-               'allTreatmentOptions' : allTreatmentOptions,
+               'allTreatmentOptions': allTreatmentOptions,
+               'form': form,
                }
-
     return render(request, 'pages/appointment.html', context)
 
 

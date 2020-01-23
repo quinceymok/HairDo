@@ -8,15 +8,6 @@
 from django.db import models
 
 
-class Availability(models.Model):
-    date_id = models.ForeignKey('TimeSlot', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
-    stylist_id = models.ForeignKey('Stylist', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
-    available = models.SmallIntegerField(db_column='Available', blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        db_table = 'Availability'
-        unique_together = (('date_id', 'stylist_id'),)
-
 
 class ChosenTreatment(models.Model):
     appointment_id = models.ForeignKey('Appointment', blank=True, null=False, on_delete=models.PROTECT)  # Field name made lowercase.
@@ -53,13 +44,16 @@ class Stylist(models.Model):
 
 class TimeSlot(models.Model):
     date_id = models.AutoField(db_column='Date_ID', primary_key=True)  # Field name made lowercase.
-    date = models.DateTimeField(db_column='Date', blank=True, null=True)  # Field name made lowercase.
+    date = models.DateField(db_column='Date', blank=True, null=True)  # Field name made lowercase.
+    time = models.TimeField(blank=True, null=True)
+    available = models.BooleanField(default=True)
+    stylist_id = models.ForeignKey('Stylist', on_delete=models.PROTECT)  # Field name made lowercase.
 
     class Meta:
         db_table = 'Time_slot'
 
     def __str__(self):
-        return str(self.date)
+        return str(self.date_id)
 
 
 class Treatment(models.Model):

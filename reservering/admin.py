@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Customer, Stylist, Appointment, TimeSlot, Treatment, TreatmentOptions, Availability, ChosenTreatment
+from .models import Customer, Stylist, Appointment, TimeSlot, Treatment, TreatmentOptions, ChosenTreatment
 
 
 # Register your models here.
@@ -11,13 +11,18 @@ class StylistAdmin(admin.ModelAdmin):
     list_display = ('stylist_id', 'firstname', 'lastname')
 admin.site.register(Stylist, StylistAdmin)
 
+
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = ('appointment_id', 'customer_id', 'stylist_id', 'date_id')
 admin.site.register(Appointment, AppointmentAdmin)
 
+
 class TimeSlotAdmin(admin.ModelAdmin):
-    list_display = ('date_id', 'date')
+    list_display = ('date_id', 'date', 'time', 'available', 'stylist_id')
+
+
 admin.site.register(TimeSlot, TimeSlotAdmin)
+
 
 class TreatmentAdmin(admin.ModelAdmin):
     list_display = ('treatment_id', 'name')
@@ -26,10 +31,6 @@ admin.site.register(Treatment, TreatmentAdmin)
 class TreatmentOptionsAdmin(admin.ModelAdmin):
     list_display = ('treatment_options_id', 'name', 'treatment_id', 'duration')
 admin.site.register(TreatmentOptions, TreatmentOptionsAdmin)
-
-class AvailabilityAdmin(admin.ModelAdmin):
-    list_display = ('date_id', 'stylist_id', 'available')
-admin.site.register(Availability, AvailabilityAdmin)
 
 class ChosenTreatmentAdmin(admin.ModelAdmin):
     list_display = ('appointment_id', 'treatment_options_id')

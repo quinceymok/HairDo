@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from reservering.models import (
-    Customer, Stylist, Treatment, TimeSlot, TreatmentOptions, ChosenTreatment, Availability, Appointment)
+    Customer, Stylist, Treatment, TimeSlot, TreatmentOptions, ChosenTreatment, Appointment)
 
 
 class CustomerSerializer(serializers.HyperlinkedModelSerializer):
@@ -38,11 +38,6 @@ class ChosenTreatmentSerializer(serializers.ModelSerializer):
         model = ChosenTreatment
         fields = ('appointment_id', 'treatment_options_id', 'url')
 
-
-class AvailabilitySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Availability
-        fields = ('date_id', 'stylist_id', 'url')
 
 class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

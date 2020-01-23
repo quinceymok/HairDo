@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from reservering.models import Customer, Stylist, Treatment, TimeSlot, TreatmentOptions, ChosenTreatment, Availability, Appointment
+from reservering.models import Customer, Stylist, Treatment, TimeSlot, TreatmentOptions, ChosenTreatment,  Appointment
 from .serializers import (
     CustomerSerializer, StylistSerializer, TreatmentSerializer, TimeSlotSerializer, TreatmentOptionsSerializer,
-    ChosenTreatmentSerializer, AvailabilitySerializer, AppointmentSerializer
+    ChosenTreatmentSerializer, AppointmentSerializer
 )
 
 
@@ -36,9 +36,6 @@ class ChosenTreatmentView(viewsets.ModelViewSet):
     queryset = ChosenTreatment.objects.all()
     serializer_class = ChosenTreatmentSerializer
 
-class AvailabilityView(viewsets.ModelViewSet):
-    queryset = Availability.objects.all()
-    serializer_class = AvailabilitySerializer
 
 class AppointmentView(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()

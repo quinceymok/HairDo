@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/appointment.css' %}">
 
+
 </head>
 <body>
 <nav class="navbar">
@@ -61,7 +62,7 @@
                 </ul>
             </li>
         {% endfor %}
-
+    </ul>
 
 </section>
 
@@ -81,11 +82,27 @@
 
 
 <section id="page-4" class="container">
-    <h2><i class="page_4"><a href="#page-5">Datum/Tijd</a></i></h2>
+    <h1 class="title center">
+        <a href="#page-5">Datum/Tijd</a>
+    </h1>
+   <div class = "datumform">
+    <form id = "dateform" role="form">
+       {{ form }}
+
+   <div class="">
+       <button type="button">Toon tijden</button>
+   </div>
+
+</form>
+   </div>
 </section>
 
+
+
 <section id="page-5" class="container">
-    <h2><i class="page_5">Bevestiging</i></h2>
+    <h1 class="title center">
+        <a href="#page-6">Bevestiging</a>
+    </h1>2>
 </section>
 
 <img src="/pages/images/homePage.jpg" alt="" class="image">
@@ -93,7 +110,9 @@
 <div class="footer">
     <p>&copy; hairdodesign.nl | designed by Quincey Mok</p>
 </div>
+
+<script src="{% static 'pages/appointment.js' %}"></script>
 </body>
 </html>
 
-<script src="{% static 'pages/appointment.js' %}"></script>
+

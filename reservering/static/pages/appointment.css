@@ -15,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: #FAE8EB;
+    background-color: lightblue;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
@@ -118,6 +118,10 @@ h1.title.center {
 
 #page-4 {
     background-color: #5897fb;
+}
+
+#page-5 {
+    background-color: lightpink;
 }
 
 @media (max-width: 991px) {
@@ -307,4 +311,18 @@ h1.title.center {
     background: #598527;
     color: white;
     font-size:1.18em;
+}
+
+
+div.datumform
+{
+    display: block;
+    text-align: center;
+}
+.dateform
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
