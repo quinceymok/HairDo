@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import CustomerForm
-from .models import Customer, Stylist, Treatment
+from .models import Customer, Stylist, Treatment, TreatmentOptions
+
+from django.db.models import prefetch_related_objects
 
 
 def index(request):
@@ -10,7 +12,11 @@ def index(request):
 def appointment(request):
     allStylist = Stylist.objects.all()
     allTreatment = Treatment.objects.all()
-    context = {'allStylist': allStylist, 'allTreatment': allTreatment}
+    allTreatmentOptions =  TreatmentOptions.objects.all()
+    context = {'allStylist': allStylist,
+               'allTreatment': allTreatment,
+               'allTreatmentOptions' : allTreatmentOptions,
+               }
 
     return render(request, 'pages/appointment.html', context)
 

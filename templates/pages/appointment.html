@@ -49,13 +49,20 @@
             <a href="#page-3">Behandelingen</a>
         </h1>
 
-        <div class="card-container behandelingen">
+        <ul class="nav">
             {% for Treatment in allTreatment %}
-                <div class="card treatment" id="{{ Treatment.name }}">
-                    {{ Treatment.name }}
-                </div>
+            <li>
+                <a> {{Treatment.name }}</a>
+                <ul class="sub-nav">
+                    {% for TreatmentOption in allTreatmentOptions %}
+                        {% if TreatmentOption.treatment_id_id == Treatment.treatment_id %}
+                    <li><a>{{ TreatmentOption.name }}</a></li>
+                    {% endif %} {% endfor %}
+                </ul>
+            </li>
             {% endfor %}
-        </div>
+
+
     </section>
 
     <section id="page-3" class="container">

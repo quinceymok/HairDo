@@ -82,6 +82,9 @@ class TreatmentOptions(models.Model):
     class Meta:
         db_table = 'Treatment_Options'
 
+    def __str__(self):
+        return self.name
+
 
 class Appointment(models.Model):
     appointment_id = models.AutoField(db_column='Appointment_ID', primary_key=True)  # Field name made lowercase.
