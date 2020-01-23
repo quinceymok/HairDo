@@ -8,87 +8,87 @@
 
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#" class="navbar-brand"><span>Hair</span>Do<span>De</span>Sign</a>
-        <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/appointment">Price</a></li>
-            <li><a href="/">Home</a></li>
-        </ul>
-        <button class="navbar-toggler">
-       <span></span>
-     </button>
-    </nav>
+<nav class="navbar">
+    <a href="#" class="navbar-brand"><span>Hair</span>Do<span>De</span>Sign</a>
+    <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/appointment">Price</a></li>
+        <li><a href="/">Home</a></li>
+    </ul>
+    <button class="navbar-toggler">
+        <span></span>
+    </button>
+</nav>
 
-    <header class="intro"></header>
+<header class="intro"></header>
 
 
-    <section id="page-1" class="container">
-                <h1 class="title center">
-            <a href="#page-2">Voor wie</a>
-        </h1>
+<section id="page-1" class="container">
+    <h1 class="title center">
+        <a href="#page-2">Voor wie</a>
+    </h1>
 
-        <div class="card-container gender-choices">
-                <div class="card choice" id="man">
-                    Man
-                </div>
-                <div class="card choice" id="vrouw">
-                    Vrouw
-                </div>
-            <div class="card choice" id="kids">
-                    Kids
-                </div>
-            <div class="card choice" id="anders">
-                    Anders
-                </div>
-        </div>
-    </section>
+    <div class="card-container gender-choices">
+        <a href="#page-2" class="card choice" id="man">
+            Man
+        </a>
+        <a class="card choice" href="#page-2" id="vrouw">
+            Vrouw
+        </a>
+        <a href="#page-2" class="card choice" id="kids">
+            Kids
+        </a>
+        <a href="#page-2" class="card choice" id="anders">
+            Anders
+        </a>
+    </div>
+</section>
 
-    <section id="page-2" class="container">
-        <h1 class="title center">
-            <a href="#page-3">Behandelingen</a>
-        </h1>
+<section id="page-2" class="container">
+    <h1 class="title center">
+        <a href="#page-3">Behandelingen</a>
+    </h1>
 
-        <ul class="nav">
-            {% for Treatment in allTreatment %}
+    <ul class="nav">
+        {% for Treatment in allTreatment %}
             <li>
                 <a> {{Treatment.name }}</a>
                 <ul class="sub-nav">
                     {% for TreatmentOption in allTreatmentOptions %}
                         {% if TreatmentOption.treatment_id_id == Treatment.treatment_id %}
-                    <li><a>{{ TreatmentOption.name }}</a></li>
-                    {% endif %} {% endfor %}
+                            <li><a href="#page-3" id="{{ TreatmentOption.name }}">{{ TreatmentOption.name }}</a></li>
+                        {% endif %} {% endfor %}
                 </ul>
             </li>
-            {% endfor %}
+        {% endfor %}
 
 
-    </section>
+</section>
 
-    <section id="page-3" class="container">
-        <h1 class="title center">
-            <a href="#page-4">Stylist</a>
-        </h1>
+<section id="page-3" class="container">
+    <h1 class="title center">
+        <a href="#page-4">Stylist</a>
+    </h1>
 
-        <div class="card-container stylisten">
-            {% for Stylist in allStylist %}
-                <div class="card stylist" id="{{ Stylist.firstname }}">
-                    {{ Stylist.firstname }}
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+    <div class="card-container stylisten">
+        {% for Stylist in allStylist %}
+            <div class="card stylist" id="{{ Stylist.firstname }}">
+                <a href="#page-4" id="{{ Stylist.firstname }}">{{ Stylist.firstname }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 
 
-    <section id="page-4" class="container">
-        <h2><i class="page_4"><a href="#page-5">Datum/Tijd</a></i></h2>
-    </section>
+<section id="page-4" class="container">
+    <h2><i class="page_4"><a href="#page-5">Datum/Tijd</a></i></h2>
+</section>
 
-    <section id="page-5" class="container">
-        <h2><i class="page_5">Bevestiging</i></h2>
-    </section>
+<section id="page-5" class="container">
+    <h2><i class="page_5">Bevestiging</i></h2>
+</section>
 
-    <img src="/pages/images/homePage.jpg" alt="" class="image">
+<img src="/pages/images/homePage.jpg" alt="" class="image">
 
 <div class="footer">
     <p>&copy; hairdodesign.nl | designed by Quincey Mok</p>

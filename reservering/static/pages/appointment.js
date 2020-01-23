@@ -28,17 +28,33 @@ for (let i = 0; i < genderChoises.length; i++) {
     console.log(singleChoice);
 }
 
-const treatmentchoices = document.querySelectorAll(".card.treatment");
+const treatmentoptionchoices = document.querySelectorAll(".nav");
 
 
-for (let i = 0; i < treatmentchoices.length; i++) {
-    const singleChoice = treatmentchoices[i];
+for (let i = 0; i < treatmentoptionchoices.length; i++) {
+    const singleChoice = treatmentoptionchoices[i];
     singleChoice.onclick = function(event) {
-        const finalTreatmentChoise = event.target.id;
-        window.localStorage.setItem("treatmentChoice", finalTreatmentChoise);
+        const finalTreatmentoptionChoise = event.target.id;
+        window.localStorage.setItem("treatmentoptionChoice", finalTreatmentoptionChoise);
     };
     console.log(singleChoice);
 }
+
+// const treatmentoptionschoices = document.querySelectorAll(".sub-nav");
+//
+// for (let i = 0; i < treatmentoptionschoices.length; i++) {
+//     const singleChoice = treatmentoptionschoices[i].querySelectorAll("li");
+//     for (let y = 0; y < singleChoice.length; y++) {
+//         const singleOption = singleChoice[y];
+//         console.log(singleOption);
+//         singleOption.onclick = function (event) {
+//             const finalTreatmentOptionChoise = event.target.id;
+//             window.localStorage.setItem("treatmentoptionChoice", finalTreatmentOptionChoise);
+//         };
+//         console.log(singleChoice);
+//     }
+// }
+
 
 
 const stylistchoices = document.querySelectorAll(".card.stylist");
