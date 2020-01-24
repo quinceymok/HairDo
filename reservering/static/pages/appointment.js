@@ -67,3 +67,7 @@ for (let i = 0; i < stylistchoices.length; i++) {
     };
     console.log(singleChoice);
 }
+function dateselector() {
+    var date = document.getElementById("dateform").getElementsByTagName("input")[0];
+    console.log(date.value);
+}

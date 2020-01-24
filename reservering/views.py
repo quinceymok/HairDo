@@ -15,11 +15,20 @@ def appointment(request):
     allTreatmentOptions = TreatmentOptions.objects.all()
 
     form = DateForm(request.POST or None)
+    customerform = CustomerForm(request.POST or None)
 
+    if customerform.is_valid():
+        firstname = form.cleaned_data['firstname']
+        lastname = form.cleaned_data['lastname']
+        phone = form.cleaned_data['phone']
+        e_mail = form.cleaned_data['e_mail']
+        c = Customer(firstname=firstname, lastname=lastname, phone=phone, e_mail=e_mail)
+        #c.save()
     context = {'allStylist': allStylist,
                'allTreatment': allTreatment,
                'allTreatmentOptions': allTreatmentOptions,
                'form': form,
+               'customerform': customerform,
                }
     return render(request, 'pages/appointment.html', context)
 

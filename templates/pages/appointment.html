@@ -86,14 +86,9 @@
         <a href="#page-5">Datum/Tijd</a>
     </h1>
    <div class = "datumform">
-    <form id = "dateform" role="form">
+    <form id = "dateform" role="form" onchange="dateselector()">
        {{ form }}
-
-   <div class="">
-       <button type="button">Toon tijden</button>
-   </div>
-
-</form>
+    </form>
    </div>
 </section>
 
@@ -102,7 +97,15 @@
 <section id="page-5" class="container">
     <h1 class="title center">
         <a href="#page-6">Bevestiging</a>
-    </h1>2>
+    </h1>
+     <div class = "bevestigingform">
+    <form id = "bevestigingform" role="form">
+       {{ customerform }}
+
+   <div class="">
+       <button type="button">bevestig reservering</button>
+   </div>
+    </form>
 </section>
 
 <img src="/pages/images/homePage.jpg" alt="" class="image">

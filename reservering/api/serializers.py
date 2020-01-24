@@ -24,7 +24,7 @@ class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
 class TimeSlotSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TimeSlot
-        fields = ('date_id', 'url', 'date')
+        fields = ('date_id', 'url', 'date', 'time', 'available', 'stylist_id')
 
 
 class TreatmentOptionsSerializer(serializers.HyperlinkedModelSerializer):

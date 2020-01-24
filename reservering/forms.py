@@ -6,7 +6,7 @@ from django import forms
 class CustomerForm(ModelForm):
     class Meta:
         model = Customer
-        fields = '__all__'
+        fields = ['firstname', 'lastname', 'phone', 'e_mail']
 
 
 class DateInput(forms.DateInput):
