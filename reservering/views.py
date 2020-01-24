@@ -23,6 +23,7 @@ def appointment(request):
         phone = form.cleaned_data['phone']
         e_mail = form.cleaned_data['e_mail']
         c = Customer(firstname=firstname, lastname=lastname, phone=phone, e_mail=e_mail)
+        # c.customer_id
         #c.save()
     context = {'allStylist': allStylist,
                'allTreatment': allTreatment,

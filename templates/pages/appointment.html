@@ -53,7 +53,7 @@
     <ul class="nav">
         {% for Treatment in allTreatment %}
             <li>
-                <a> {{Treatment.name }}</a>
+                <a> {{ Treatment.name }}</a>
                 <ul class="sub-nav">
                     {% for TreatmentOption in allTreatmentOptions %}
                         {% if TreatmentOption.treatment_id_id == Treatment.treatment_id %}
@@ -85,27 +85,27 @@
     <h1 class="title center">
         <a href="#page-5">Datum/Tijd</a>
     </h1>
-   <div class = "datumform">
-    <form id = "dateform" role="form" onchange="dateselector()">
-       {{ form }}
-    </form>
-   </div>
+    <div class="datumform">
+        <form id="dateform" role="form" onchange="dateselector()">
+            {{ form }}
+
+            <div id="timeslot"></div>
+        </form>
+    </div>
 </section>
-
-
 
 <section id="page-5" class="container">
     <h1 class="title center">
         <a href="#page-6">Bevestiging</a>
     </h1>
-     <div class = "bevestigingform">
-    <form id = "bevestigingform" role="form">
-       {{ customerform }}
+    <div class="bevestigingform">
+        <form id="bevestigingform" role="form">
+            {{ customerform }}
 
-   <div class="">
-       <button type="button">bevestig reservering</button>
-   </div>
-    </form>
+            <div class="">
+                <button type="button" on_click="maak_afspraak()">bevestig reservering</button>
+            </div>
+        </form>
 </section>
 
 <img src="/pages/images/homePage.jpg" alt="" class="image">
@@ -114,7 +114,43 @@
     <p>&copy; hairdodesign.nl | designed by Quincey Mok</p>
 </div>
 
+<script>
+    function getTimeslotAPI() {
+        fetch('/api/timeslot/', {
+            method: 'GET',
+            headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                    document.getElementById('timeslot').innerHTML = '';
+
+                    if (!result['success']) {
+                        for (var i = 0; i < result.length; i++) {
+                            if (result[i].available === true) {
+                                if (result[i].date === document.getElementById('id_my_date_field').value) {
+                                    document.getElementById('timeslot').innerHTML += '<a onclick="test(this)">' + result[i].time + '</a><br/>';
+                                }
+                            }
+                        }
+                    } else {
+                        return null;
+                    }
+                }
+            );
+    }
+
+
+    function test(tijd) {
+        console.log(tijd.innerText);
+
+    }
+
+</script>
+
 <script src="{% static 'pages/appointment.js' %}"></script>
+
 </body>
 </html>
 

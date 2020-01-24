@@ -21,7 +21,7 @@ const genderChoises = document.querySelectorAll(".card.choice");
 
 for (let i = 0; i < genderChoises.length; i++) {
     const singleChoice = genderChoises[i];
-    singleChoice.onclick = function(event) {
+    singleChoice.onclick = function (event) {
         const finalGenderChoise = event.target.id;
         window.localStorage.setItem("genderChoice", finalGenderChoise);
     };
@@ -33,7 +33,7 @@ const treatmentoptionchoices = document.querySelectorAll(".nav");
 
 for (let i = 0; i < treatmentoptionchoices.length; i++) {
     const singleChoice = treatmentoptionchoices[i];
-    singleChoice.onclick = function(event) {
+    singleChoice.onclick = function (event) {
         const finalTreatmentoptionChoise = event.target.id;
         window.localStorage.setItem("treatmentoptionChoice", finalTreatmentoptionChoise);
     };
@@ -56,18 +56,26 @@ for (let i = 0; i < treatmentoptionchoices.length; i++) {
 // }
 
 
-
 const stylistchoices = document.querySelectorAll(".card.stylist");
 
 for (let i = 0; i < stylistchoices.length; i++) {
     const singleChoice = stylistchoices[i];
-    singleChoice.onclick = function(event) {
+    singleChoice.onclick = function (event) {
         const finalStylistChoise = event.target.id;
         window.localStorage.setItem("stylistChoice", finalStylistChoise);
     };
     console.log(singleChoice);
 }
+
 function dateselector() {
     var date = document.getElementById("dateform").getElementsByTagName("input")[0];
+    getTimeslotAPI();
     console.log(date.value);
+}
+
+function maak_afspraak() {
+    // api call 1
+
+
+    // api call 2
 }
