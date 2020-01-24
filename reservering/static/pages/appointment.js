@@ -73,9 +73,4 @@ function dateselector() {
     console.log(date.value);
 }
 
-function maak_afspraak() {
-    // api call 1
 
-
-    // api call 2
-}

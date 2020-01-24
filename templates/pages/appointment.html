@@ -73,7 +73,7 @@
 
     <div class="card-container stylisten">
         {% for Stylist in allStylist %}
-            <div class="card stylist" id="{{ Stylist.firstname }}">
+            <div class="card stylist" id="{{ Stylist.stylist_id }}">
                 <a href="#page-4" id="{{ Stylist.firstname }}">{{ Stylist.firstname }}</a>
             </div>
         {% endfor %}
@@ -103,7 +103,7 @@
             {{ customerform }}
 
             <div class="">
-                <button type="button" on_click="maak_afspraak()">bevestig reservering</button>
+                <button type="button" onclick="maak_afspraak()">bevestig reservering</button>
             </div>
         </form>
 </section>
@@ -147,6 +147,34 @@
 
     }
 
+    function maak_afspraak() {
+
+        // api call 1 (customer call)
+        fetch('http://127.0.0.1:8000/api/customer/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                "firstname": "quincy",
+                "lastname": "de Jong ",
+                "phone": "01234567",
+                "e_mail": "quincy.dejong@student.hu.nl",
+                "gender": "man"
+            })
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                if (!result['success']) {
+                    console.log(result);
+                } else {
+                    return null;
+                }
+            });
+
+
+        // api call 2 (appointment call)
+    }
 </script>
 
 <script src="{% static 'pages/appointment.js' %}"></script>
