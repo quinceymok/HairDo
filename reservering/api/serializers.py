@@ -3,13 +3,13 @@ from reservering.models import (
     Customer, Stylist, Treatment, TimeSlot, TreatmentOptions, ChosenTreatment, Appointment)
 
 
-class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = ('customer_id', 'url','firstname', 'lastname', 'phone', 'e_mail', 'gender')
 
 
-class StylistSerializer(serializers.HyperlinkedModelSerializer):
+class StylistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stylist
         fields = ('stylist_id', 'url', 'firstname', 'lastname')
@@ -21,7 +21,7 @@ class TreatmentSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('treatment_id', 'url', 'name')
 
 
-class TimeSlotSerializer(serializers.HyperlinkedModelSerializer):
+class TimeSlotSerializer(serializers.ModelSerializer):
     class Meta:
         model = TimeSlot
         fields = ('date_id', 'url', 'date', 'time', 'available', 'stylist_id')
@@ -39,7 +39,7 @@ class ChosenTreatmentSerializer(serializers.ModelSerializer):
         fields = ('appointment_id', 'treatment_options_id', 'url')
 
 
-class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
+class AppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Appointment
         fields = ('appointment_id', 'customer_id', 'stylist_id', 'date_id', 'url')
