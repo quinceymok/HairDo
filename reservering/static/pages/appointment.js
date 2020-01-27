@@ -73,4 +73,84 @@ function dateselector() {
     console.log(date.value);
 }
 
+    function getTimeslotAPI() {
+        fetch('/api/timeslot/', {
+            method: 'GET',
+            headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                    document.getElementById('timeslot').innerHTML = '';
 
+                    if (!result['success']) {
+                        for (var i = 0; i < result.length; i++) {
+                            if (result[i].available === true) {
+                                if (result[i].date === document.getElementById('id_my_date_field').value) {
+                                    window.localStorage.setItem("date_id", result[i].date_id )
+                                    document.getElementById('timeslot').innerHTML += '<a onclick="test(this)">' + result[i].time + '</a><br/>';
+                                }
+                            }
+                        }
+                    } else {
+                        return null;
+                    }
+                }
+            );
+    }
+
+
+    function test(tijd) {
+        console.log(tijd.innerText);
+
+    }
+
+    function maak_afspraak() {
+
+        // api call 1 (customer call)
+        fetch('http://127.0.0.1:8000/api/customer/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                "firstname": document.getElementById("id_firstname").value,
+                "lastname": document.getElementById("id_lastname").value,
+                "phone": document.getElementById("id_phone").value,
+                "e_mail": document.getElementById("id_e_mail").value,
+            })
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((result) => {
+                if (!result['success']) {
+                    console.log(result);
+                    fetch('http://127.0.0.1:8000/api/appointment/', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            "customer_id": parseInt(result.customer_id),
+                            "stylist_id": parseInt(localStorage.getItem("stylistChoice")),
+                            "date_id": parseInt(localStorage.getItem("date_id")),
+                        })
+                    })
+                        .then((response) => {
+                            return response.json();
+                        })
+                        .then((result) => {
+                            if (!result['success']) {
+                                console.log(result);
+
+                            } else {
+                                return null;
+                            }
+                        });
+
+                } else {
+                    return null;
+                }
+            });
+
+        // api call 2 (appointment call)
+
+    }
