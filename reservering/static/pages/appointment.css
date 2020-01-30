@@ -15,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: lightblue;
+    background-color: rosybrown;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
@@ -109,7 +109,7 @@ h1.title.center {
 }
 
 #page-2 {
-    background-color: lightpink;
+    background-color: #F9CFBC;
 }
 
 #page-3 {
@@ -117,11 +117,11 @@ h1.title.center {
 }
 
 #page-4 {
-    background-color: #5897fb;
+    background-color: #F9CFBC;
 }
 
 #page-5 {
-    background-color: lightpink;
+    background-color: #F9CFBC;
 }
 
 @media (max-width: 991px) {
@@ -260,7 +260,7 @@ h1.title.center {
     height: 400px;
     line-height: 40px;
     margin: auto;
-    background: lightpink;
+    background: #F9CFBC;
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1em;
@@ -269,7 +269,7 @@ h1.title.center {
 .nav > li{
     float: left;
     width: 199px;
-    background: black;
+    background: rosybrown;
     border-left: 1px solid white;
 }
 .nav > li:hover{

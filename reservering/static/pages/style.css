@@ -15,7 +15,7 @@ body {
 }
 
 .navbar {
-    background-color: lightblue;
+    background-color: rosybrown;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
@@ -104,7 +104,7 @@ body {
 }
 
 #page-2 {
-    background-color: lightpink;
+    background-color: #F9CFBC;
 }
 
 #page-3 {
